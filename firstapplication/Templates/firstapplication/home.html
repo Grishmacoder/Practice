@@ -1,0 +1,15 @@
+{% extends "firstapplication/base.html" %}
+{% block content %}
+    {% for d in data %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ d.author }}</a>
+              <small class="text-muted">{{ d.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ d.title }}</a></h2>
+            <p class="article-content">{{ d.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
